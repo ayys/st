@@ -13,14 +13,13 @@
         name = "st";
         src = ./.;
         buildInputs = [
-          pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft
+          pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.ncurses
         ];
         buildPhase = ''
           make
         '';
         installPhase = ''
-          mkdir -p $out/bin
-          cp st $out/bin
+          TERMINFO="$out" make install DESTDIR="$out" PREFIX=""
         '';
       };
 
