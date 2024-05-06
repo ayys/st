@@ -1,27 +1,36 @@
 {
   description = "ayys's fork of st - the suckless simple terminal";
 
-  inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    flakeutils.url = "github:numtide/flake-utils";
+  };
 
   outputs =
-    { self, nixpkgs }:
-    let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-    in
-    {
-      defaultPackage.x86_64-linux = pkgs.stdenv.mkDerivation {
-        name = "st";
-        src = ./.;
-        buildInputs = [
-          pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.ncurses
-        ];
-        buildPhase = ''
+    { self, nixpkgs, flakeutils }:
+      flakeutils.lib.eachDefaultSystem (system:
+        let pkgs = nixpkgs.legacyPackages.${system}; in
+        {
+          packages = rec {
+            st = pkgs.stdenv.mkDerivation {
+              name = "st";
+              src = ./.;
+              buildInputs = [
+                pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.ncurses
+              ];
+              buildPhase = ''
           make
         '';
-        installPhase = ''
+              installPhase = ''
           TERMINFO="$out" make install DESTDIR="$out" PREFIX=""
         '';
-      };
-
-    };
+            };
+            default = st;
+          };
+          apps = rec {
+            st = flakeutils.lib.mkApp { drv = self.packages.${system}.st; };
+            default = st;
+          };
+        }
+      );
 }
