@@ -16,7 +16,7 @@
               name = "st";
               src = ./.;
               buildInputs = [
-                pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.ncurses
+                pkgs.gcc pkgs.pkg-config pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.ncurses pkgs.hack-font
               ];
               buildPhase = ''
           make
