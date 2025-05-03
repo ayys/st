@@ -1,0 +1,45 @@
+* Implementing st in guile
+
+| *C library*      | Source (if exists)                  | Description                           |
+|------------------+-------------------------------------+---------------------------------------|
+| termios          | https://github.com/ft/guile-termios | *Already exists!*                     |
+| pty              |                                     | /probably quick to implement/         |
+| sys/ioctl        |                                     | Annoying but doable                   |
+| nistd           |                                     | *Probably does not need implementing* |
+| fcntl            |                                     | *Probably does not need implementing* |
+| X11/Xlib         |                                     | Central to ST; must wrap eventually   |
+| X11/Xft/Xft.h    |                                     | Complex structs + FFI + Xrender       |
+| X11/keysym.h     |                                     | Just constants — you can copy them    |
+| X11/cursorfont.h |                                     | Also just constants                   |
+| X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
+
+* Implementing st in guile
+
+| *C library*      | Source (if exists)                  | Description                           |
+|------------------+-------------------------------------+---------------------------------------|
+| termios          | https://github.com/ft/guile-termios | *Already exists!*                     |
+| pty              |                                     | /probably quick to implement/         |
+| sys/ioctl        |                                     |                                       |
+| unistd           |                                     | *Probably does not need implementing* |
+| fcntl            |                                     | *Probably does not need implementing* |
+| X11/Xlib         |                                     | Central to ST; must wrap eventually   |
+| X11/Xft/Xft.h    |                                     | Complex structs + FFI + Xrender       |
+| X11/keysym.h     |                                     | Just constants — you can copy them    |
+| X11/cursorfont.h |                                     | Also just constants                   |
+| X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
+
+* Implementing st in guile
+
+| *C library*      | Source (if exists)                  | Description                           |
+|------------------+-------------------------------------+---------------------------------------|
+| termios          | https://github.com/ft/guile-termios | *Already exists!*                     |
+| pty              |                                     | /probably quick to implement/         |
+| sys/ioctl        |                                     |                                       |
+| unistd           |                                     | *Probably does not need implementing* |
+| fcntl            |                                     | *Probably does not need implementing* |
+| X11/Xlib         |                                     | Central to ST; must wrap eventually   |
+| X11/Xft/Xft.h    |                                     | Complex structs + FFI + Xrender       |
+| X11/keysym.h     |                                     | Just constants — you can copy them    |
+| X11/cursorfont.h |                                     | Also just constants                   |
+| X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
+
