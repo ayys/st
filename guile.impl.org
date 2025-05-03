@@ -13,33 +13,13 @@
 | X11/cursorfont.h |                                     | Also just constants                   |
 | X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
 
-* Implementing st in guile
 
-| *C library*      | Source (if exists)                  | Description                           |
-|------------------+-------------------------------------+---------------------------------------|
-| termios          | https://github.com/ft/guile-termios | *Already exists!*                     |
-| pty              |                                     | /probably quick to implement/         |
-| sys/ioctl        |                                     |                                       |
-| unistd           |                                     | *Probably does not need implementing* |
-| fcntl            |                                     | *Probably does not need implementing* |
-| X11/Xlib         |                                     | Central to ST; must wrap eventually   |
-| X11/Xft/Xft.h    |                                     | Complex structs + FFI + Xrender       |
-| X11/keysym.h     |                                     | Just constants — you can copy them    |
-| X11/cursorfont.h |                                     | Also just constants                   |
-| X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
 
-* Implementing st in guile
-
-| *C library*      | Source (if exists)                  | Description                           |
-|------------------+-------------------------------------+---------------------------------------|
-| termios          | https://github.com/ft/guile-termios | *Already exists!*                     |
-| pty              |                                     | /probably quick to implement/         |
-| sys/ioctl        |                                     |                                       |
-| unistd           |                                     | *Probably does not need implementing* |
-| fcntl            |                                     | *Probably does not need implementing* |
-| X11/Xlib         |                                     | Central to ST; must wrap eventually   |
-| X11/Xft/Xft.h    |                                     | Complex structs + FFI + Xrender       |
-| X11/keysym.h     |                                     | Just constants — you can copy them    |
-| X11/cursorfont.h |                                     | Also just constants                   |
-| X11/XKBlib.h     |                                     | Optional:  not needed for MVP         |
-
+* C files with LOC
+|  LOC | Filename     |
+|   41 | [[file:win.h][win.h]]        |
+|   50 | [[file:arg.h][arg.h]]        |
+|  128 | [[file:st.h][st.h]]         |
+|  528 | [[file:config.def.h][config.def.h]] |
+| 2164 | [[file:x.c][x.c]]          |
+| 2696 | [[file:st.c][st.c]]         |
